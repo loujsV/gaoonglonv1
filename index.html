@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gao Ong Lon – Premium ST25 Rice | Westminster, CA</title>
+  <meta name="description" content="Gao Ong Lon – Your trusted source for authentic ST25 Vietnamese rice in Westminster, California. The world's finest rice, delivered to your table.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:    #c9a84c;
+      --gold-lt: #e8d08a;
+      --brown:   #3b2a14;
+      --cream:   #fdf8ef;
+      --warm:    #f5ead6;
+      --text:    #2c1f0e;
+      --muted:   #7a6348;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 80px;
+      background: var(--brown);
+      overflow: hidden;
+    }
+
+    /* grain overlay */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    /* decorative circle */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,.18);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 720px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.4);
+      color: var(--gold-lt);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 12px;
+      animation: fadeUp .8s .15s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,.6);
+      font-weight: 300;
+      margin-bottom: 48px;
+      animation: fadeUp .8s .3s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      animation: fadeUp .8s .45s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--brown);
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.35); }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.3);
+      color: #fff;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.08); transform: translateY(-2px); }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center;
+      gap: 6px; color: rgba(255,255,255,.3);
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      animation: fadeUp 1s .8s ease both;
+    }
+    .scroll-hint span { display: block; width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(201,168,76,.5), transparent); }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 96px 24px; }
+
+    .section-label {
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-box {
+      aspect-ratio: 4/5;
+      background: var(--warm);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8rem;
+      position: relative;
+    }
+
+    .about-img-box::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,.12), transparent 60%);
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--brown);
+      color: var(--gold);
+      border-radius: 14px;
+      padding: 20px 24px;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(59,42,20,.25);
+    }
+    .about-badge-float strong { display: block; font-size: 2rem; line-height: 1; }
+    .about-badge-float span { font-size: .8rem; opacity: .7; letter-spacing: .05em; }
+
+    /* ── WHY US ── */
+    .why {
+      background: var(--warm);
+    }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-header { margin-bottom: 56px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 36px 28px;
+      border: 1px solid rgba(201,168,76,.15);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(59,42,20,.1); }
+
+    .card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: .95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── PRODUCT ── */
+    .product {
+      background: var(--brown);
+      color: #fff;
+      text-align: center;
+    }
+    .product .section-title { color: #fff; }
+    .product .section-label { margin-bottom: 12px; }
+    .product .section-body { color: rgba(255,255,255,.6); margin: 0 auto 56px; }
+
+    .product-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: 16px;
+      padding: 32px 20px;
+      transition: background .25s, border-color .25s;
+    }
+    .product-card:hover { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.5); }
+
+    .product-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .product-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold-lt); margin-bottom: 8px; }
+    .product-card p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.6; }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--cream);
+    }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 28px; }
+
+    .info-row {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 48px; height: 48px;
+      background: var(--warm);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(201,168,76,.2);
+    }
+
+    .info-text strong {
+      display: block;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .info-text p, .info-text a {
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+    .info-text a:hover { color: var(--gold); }
+
+    .contact-map {
+      background: var(--warm);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,.2);
+    }
+
+    .map-placeholder {
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 3rem;
+    }
+
+    .map-placeholder p {
+      font-size: .9rem;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .contact-cta {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-call {
+      background: var(--gold);
+      color: var(--brown);
+      font-size: 1.1rem;
+      justify-content: center;
+    }
+    .btn-call:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,.4); }
+
+    .btn-email {
+      background: transparent;
+      border: 1px solid rgba(59,42,20,.2);
+      color: var(--brown);
+      justify-content: center;
+    }
+    .btn-email:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown);
+      color: rgba(255,255,255,.45);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .4s, backdrop-filter .4s, box-shadow .4s;
+    }
+    nav.scrolled {
+      background: rgba(59,42,20,.92);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.3);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: .88rem;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--brown) !important;
+      padding: 9px 22px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; color: var(--brown) !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: rgba(255,255,255,.8);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0; top: 64px;
+      background: rgba(59,42,20,.97);
+      backdrop-filter: blur(12px);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: rgba(255,255,255,.8);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .about-inner,
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .about-badge-float { right: 12px; }
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 72px 20px; }
+      .cards { grid-template-columns: 1fr; }
+      .product-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 320px; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Gao Ong Lon</a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">Our Story</a>
+  <a href="#why" class="mobile-link">Why Us</a>
+  <a href="#products" class="mobile-link">Products</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge">🏆 World's Finest Rice · ST25 Certified</div>
+    <h1>Premium <em>ST25 Rice</em><br>From the Heart of Vietnam</h1>
+    <p class="hero-sub">Westminster's most trusted source for authentic Vietnamese ST25 rice — fragrant, tender, and award-winning.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">📞 Order Now</a>
+      <a href="#about" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-img-box">🌾</div>
+      <div class="about-badge-float">
+        <strong>ST25</strong>
+        <span>World's Best Rice</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Gao Ong Lon —<br>A Name You Can Trust</h2>
+      <p class="section-body">
+        Gao Ong Lon was founded with one simple mission: bringing the finest Vietnamese ST25 rice directly to families in Southern California. Named after generations of dedication, every grain we sell carries the authentic taste of Vietnam's Mekong Delta.
+      </p>
+      <br>
+      <p class="section-body">
+        ST25 rice earned the title of <strong>"World's Best Rice"</strong> at the World's Best Rice Contest — and we're proud to bring it right to your doorstep here in Westminster, California.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-header reveal">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Quality You Can Taste</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <span class="card-icon">🌿</span>
+        <h3>100% Authentic ST25</h3>
+        <p>Sourced directly from certified ST25 farmers in Sóc Trăng Province, Vietnam — no blends, no substitutes.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">📦</span>
+        <h3>Bulk & Retail Sizes</h3>
+        <p>Available in multiple bag sizes — perfect for households, restaurants, and grocery stores alike.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🤝</span>
+        <h3>Trusted in Westminster</h3>
+        <p>A local family business serving the Vietnamese-American community with honesty and care.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🚚</span>
+        <h3>Easy Pickup & Delivery</h3>
+        <p>Convenient location in Westminster, CA. Call us to arrange your order — we make it simple.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">🌾</span>
+        <h3>Award-Winning Grain</h3>
+        <p>ST25 was crowned the world's finest rice — long, aromatic grains with a naturally soft, delicate texture.</p>
+      </div>
+      <div class="card reveal">
+        <span class="card-icon">💬</span>
+        <h3>Personal Service</h3>
+        <p>Speak directly with the owner — no automated systems, just friendly, knowledgeable help every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="product" id="products">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title reveal">Our ST25 Rice Selection</h2>
+  <p class="section-body reveal">From everyday family meals to restaurant-quality servings — we have the right option for you.</p>
+  <div class="product-grid reveal">
+    <div class="product-card">
+      <div class="icon">🛍️</div>
+      <h3>Retail Bags</h3>
+      <p>5 lb & 10 lb bags — perfect for home cooking and gifting.</p>
+    </div>
+    <div class="product-card">
+      <div class="icon">🏪</div>
+      <h3>Bulk Orders</h3>
+      <p>25 lb & 50 lb sacks for restaurants, grocers, and large families.</p>
+    </div>
+    <div class="product-card">
+      <div class="icon">🎁</div>
+      <h3>Gift Sets</h3>
+      <p>Beautifully packaged ST25 rice — ideal for holidays and special occasions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label reveal">Get In Touch</p>
+      <h2 class="section-title reveal">Visit Us or<br>Give Us a Call</h2>
+      <div class="contact-info reveal">
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <strong>Address</strong>
+            <p>Westminster City, California<br>CA 92683</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <strong>Phone</strong>
+            <a href="tel:+16571234566">(657) 123-4566</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">✉️</div>
+          <div class="info-text">
+            <strong>Email</strong>
+            <a href="mailto:gaoonglon@gmail.com">gaoonglon@gmail.com</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🕐</div>
+          <div class="info-text">
+            <strong>Hours</strong>
+            <p>Mon – Sat: 9:00 AM – 6:00 PM<br>Sun: 10:00 AM – 4:00 PM</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-cta reveal">
+        <a href="tel:+16571234566" class="btn btn-call">📲 Call to Order: (657) 123-4566</a>
+        <a href="mailto:gaoonglon@gmail.com" class="btn btn-email">✉️ Email Us</a>
+      </div>
+    </div>
+    <div class="contact-map reveal">
+      <div class="map-placeholder">
+        🗺️
+        <p>Westminster, CA 92683<br><small style="color:var(--muted)">Little Saigon Area</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Gao Ong Lon</strong> · Premium ST25 Vietnamese Rice · Westminster, California</p>
+  <p style="margin-top:8px;">📞 (657) 123-4566 &nbsp;|&nbsp; ✉️ gaoonglon@gmail.com</p>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
