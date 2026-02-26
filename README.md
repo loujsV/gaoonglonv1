@@ -1,17 +1,17 @@
-# Gao Ong Lon â€“ Premium ST25 Rice
+# Gao Ong Lon - Premium ST25 Rice
 
-Official website for **Gao Ong Lon**, your trusted source for authentic Vietnamese ST25 rice in Westminster, California.
+Official website for Gao Ong Lon, your trusted source for authentic Vietnamese ST25 rice in Westminster, California.
 
-## ðŸ“ Contact
+## Contact
 
-- **Address:** Westminster City, California, CA 92683
-- **Phone:** (657) 271-3792
-- **Email:** gaoonglon@gmail.com
+- Address: Westminster City, California, CA 92683
+- Phone: (657) 271-3792
+- Email: gaoonglon@gmail.com
 
-## ðŸŒ Website
+## Website
 
-Built with plain HTML/CSS/JS â€” no frameworks needed. Fully responsive for phone, tablet, and desktop.
+Built with plain HTML/CSS/JS - no frameworks needed. Fully responsive for phone, tablet, and desktop.
 
-## ðŸš€ Deployment
+## Deployment
 
-Hosted on [GitHub Pages](https://pages.github.com). Custom domain configured via GoDaddy DNS.
+Hosted on GitHub Pages. Custom domain configured via GoDaddy DNS.
